@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahu Wealth Academy | Financial Freedom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS STYLES (Design) --- */
+        :root {
+            --primary-color: #0F172A; /* Navy Blue */
+            --secondary-color: #D4AF37; /* Gold */
+            --accent-color: #F8FAFC; /* Light Gray */
+            --text-dark: #1E293B;
+            --text-light: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+            transition: 0.3s;
+        }
+
+        .btn-gold {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #b5952f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero span {
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .section-padding {
+            padding: 4rem 5%;
+        }
+
+        .about {
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--accent-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary-color);
+        }
+
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ddd;
+            padding: 2rem 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 1rem;
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav ul { display: none; } /* Simplified for mobile */
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Sahu Wealth <span style="color:white">Academy</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact" class="btn-gold">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Master Your Money. <br>Build Your <span>Legacy</span>.</h1>
+        <p>Expert guidance on Mutual Funds, Insurance, and Personal Finance. Education First, Investment Second.</p>
+        <a href="#contact" class="btn-gold">Start Your Journey</a>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <h2 class="section-title">Why Sahu Wealth Academy?</h2>
+        <div class="divider"></div>
+        <p style="max-width: 800px; margin: 0 auto;">
+            We believe that true wealth isn’t just about making money—it’s about understanding how to keep it, grow it, and protect it. 
+            At Sahu Wealth Academy, we don’t just sell financial products; we partner with you to build a roadmap for financial freedom.
+            Our approach is simple: <strong>We explain 'Why' before we tell you 'Where' to invest.</strong>
+        </p>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <h2 class="section-title" style="text-align: center;">Our Services</h2>
+        <div class="divider"></div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-chart-line service-icon"></i>
+                <h3>Mutual Fund Investment</h3>
+                <p>Goal-based investing (SIP) for your child's education, retirement, or dream home. We help you beat inflation.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h3>Insurance Planning</h3>
+                <p>Protect your family with Term Life Insurance and safeguard your savings with comprehensive Health Insurance.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-file-invoice-dollar service-icon"></i>
+                <h3>Tax & Consultancy</h3>
+                <p>Expert advice on ITR filing, Tax Saving (ELSS), and Business Incorporation (GST/Company Setup).</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-chalkboard-teacher service-icon"></i>
+                <h3>Personal Finance</h3>
+                <p>Coaching on budgeting, debt management, and financial literacy to help you master your money mindset.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <h2 class="section-title" style="text-align: center;">Contact Us</h2>
+        <div class="divider"></div>
+
+        <div class="contact">
+            <div class="contact-info">
+                <h3>Let's Discuss Your Goals</h3>
+                <p style="margin-bottom: 20px;">Ready to secure your future? Reach out to us for a consultation.</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Address:</strong><br>
+                        Shop No 07, 1st Floor, Dindayal Vyavsayik Parisar,<br>
+                        Sahu Complex, Tikarapara, Raipur (CG) - 492001
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:07714267557" class="contact-link">0771 4267557</a>, 
+                        <a href="tel:9644531380" class="contact-link">96445 31380</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:sahuwealthacademy@gmail.com" class="contact-link">sahuwealthacademy@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <select>
+                        <option>I am interested in...</option>
+                        <option>Mutual Funds</option>
+                        <option>Insurance</option>
+                        <option>Tax Planning</option>
+                        <option>Other</option>
+                    </select>
+                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sahu Wealth Academy. All Rights Reserved.</p>
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> Mutual Fund investments are subject to market risks, read all scheme-related documents carefully. Insurance is the subject matter of solicitation. The content on this website is for educational purposes only.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
